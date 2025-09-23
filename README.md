@@ -1,46 +1,46 @@
 # NFC Tools Agent
 
-Este proyecto es una aplicación .NET para interactuar con dispositivos NFC (Near Field Communication). Permite leer, escribir y gestionar tarjetas NFC utilizando la librería PCSC.
+This project is a .NET application for interacting with NFC (Near Field Communication) devices. It allows you to read, write, and manage NFC cards using the PCSC library.
 
-## Características
-- Lectura y escritura de tarjetas NFC
-- Soporte para múltiples lectores NFC
-- Integración con la librería PCSC (pcsc-sharp)
-- Uso de Newtonsoft.Json para manejo de datos JSON
-- Empaquetado con Fody y Costura para facilitar la distribución
+## Features
+- Reading and writing NFC cards
+- Support for multiple NFC readers
+- Integration with the PCSC library (pcsc-sharp)
+- Use of Newtonsoft.Json for handling JSON data
+- Packaged with Fody and Costura for easy distribution
 
-## Requisitos
-- .NET Framework 4.7.2 o superior
-- Un lector NFC compatible con PCSC
+## Requirements
+- .NET Framework 4.7.2 or higher
+- A PCSC-compatible NFC reader
 
-## Instalación
-1. Clona el repositorio:
-   ```sh
-   git clone https://github.com/royaltics-open-source/nfctools-agent.git
-   ```
-2. Abre la solución `nfcTools.sln` en Visual Studio.
-3. Restaura los paquetes NuGet si es necesario.
-4. Compila el proyecto.
+## Installation
+1. Clone the repository:
+```sh
+git clone https://github.com/royaltics-open-source/nfctools-agent.git
+```
+2. Open the `nfcTools.sln` solution in Visual Studio.
+3. Restore the NuGet packages if necessary.
+4. Build the project.
 
-## Uso
-Ejecuta el archivo `NFCToolsAgent.exe` desde la carpeta `bin/Debug` o `bin/Release`.
+## Usage
+Run the `NFCToolsAgent.exe` file from the `bin/Debug` or `bin/Release` folder.
 
-## Estructura del proyecto
-- `NfcService.cs`: Lógica principal para la interacción con dispositivos NFC
-- `Program.cs`: Punto de entrada de la aplicación
-- `App.config`: Configuración de la aplicación
-- `Resources/`: Recursos gráficos
-- `packages/`: Dependencias NuGet
+## Project Structure
+- `NfcService.cs`: Main logic for interacting with NFC devices
+- `Program.cs`: Application entry point
+- `App.config`: Application configuration
+- `Resources/`: Graphic resources
+- `packages/`: NuGet dependencies
 
-## Dependencias principales
+## Main Dependencies
 - [PCSC (pcsc-sharp)](https://github.com/danm-de/pcsc-sharp)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Fody](https://github.com/Fody/Fody)
 - [Costura.Fody](https://github.com/Fody/Costura)
 
-## Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-## Autor
+## Author
 royaltics-open-source
 @royaltics-solutions
