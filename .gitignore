@@ -1,0 +1,57 @@
+# Build Folders
+[Bb]in/
+[Oo]bj/
+[Rr]elease/
+[Dd]ebug/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.generated.cs
+*.designer.cs
+*.cache
+*.log
+
+# Visual Studio
+.vs/
+*.vscode/
+
+# Packages
+*.nupkg
+packages/
+*.snupkg
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+*.sln.iml
+
+# IIS Express
+/.vs/config/
+
+# Publish outputs
+*.publish.xml
+publish/
+
+# Others
+*.dbmdl
+*.bak
+*.backup
+*.zip
+*.7z
+*.tar.gz
+
+# Temporary files
+~$*
+*.tmp
+*.temp
