@@ -198,8 +198,14 @@ namespace NFCToolsAgent
 
         private static object HandleEncoding(RequestEncoding req)
         {
-            if (string.IsNullOrEmpty(req.Uid) || string.IsNullOrEmpty(req.LastDigits) || req.LastDigits.Length != 5)
-                return new { status = false, code = 400, message = "uid y lastDigits(5) requeridos" };
+            if (string.IsNullOrEmpty(req.Uid) )
+                return new { status = false, code = 400, message = "uid es requerido" };
+
+            if ( string.IsNullOrEmpty(req.LastDigits) || req.LastDigits.Length != 5)
+                return new { status = false, code = 400, message = "lastDigits(5) requeridos" };
+            
+            if (string.IsNullOrEmpty(req.MasterKey))
+                return new { status = false, code = 400, message = "MasterKey es requerido" };
 
             // Compactar UID (hasta 11 chars) + lastDigits (5 chars) en 16 bytes
             string uidPart = req.Uid.Length > 11 ? req.Uid.Substring(0, 11) : req.Uid.PadRight(11, '0');
@@ -209,8 +215,8 @@ namespace NFCToolsAgent
             if (payload.Length > 16) payload = payload.Take(16).ToArray();
             else if (payload.Length < 16) payload = payload.Concat(new byte[16 - payload.Length]).ToArray();
 
-            string keyA = GenerateRandomHexKey();
-            string keyB = GenerateRandomHexKey();
+            string keyA = HmacService.DeriveKeyA(req.Uid, req.MasterKey, "KA");
+            string keyB = HmacService.DeriveKeyA(req.Uid, req.MasterKey, "KB");
 
             try
             {
@@ -291,9 +297,8 @@ namespace NFCToolsAgent
             public string Uid;
             public string LastDigits;
             public int Sector;
+            public string MasterKey;
             public string AuthKey;
-            public string NewKeyA;
-            public string NewKeyB;
             public int AccessBits;
         }
     }

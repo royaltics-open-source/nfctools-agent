@@ -267,6 +267,8 @@ namespace NFCToolsAgent
         // --------------------
 
 
+
+
         private byte[] BuildAccessBits(int option)
         {
             int[,] cfg = new int[4, 3];
